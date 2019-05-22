@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to mysite!</title>
+<script>
+function showHint(year) {
+    if (year.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "process.php?year=" + year, true);
+        xmlhttp.send();
+    }
+}
+</script>
 </head>
 <body>
-    <center><h1>Hello guess ♥</h1></center>
+
+<p><b>2 + 2 = 4 - 1 = 3</b><h1>QUICK MATH!</h1></p>
+<form> 
+Input Years: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>Output: <span id="txtHint"></span></p>
 </body>
 </html>
