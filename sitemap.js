@@ -216,7 +216,7 @@ function displayToc(filter) {
       var tocNote = '<span class="toc-note">Đang hiển thị tất cả ' + postTitle.length + ' bài đăng<br/></span>'; }
    else {
       var tocNote = '<span class="toc-note">Hiển thị ' + numDisplayed + ' bài đăng theo nhãn \'';
-      tocNote += postFilter + '\' of '+ postTitle.length + ' posts total<br/></span>';
+      tocNote += postFilter + '\' của toàn bộ '+ postTitle.length + ' bài đăng<br/></span>';
    }
    tocdiv.innerHTML = tocNote + tocTable;
 } // end of displayToc
